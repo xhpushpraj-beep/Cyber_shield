@@ -1,0 +1,530 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cybersecurity Tips | Cyber Shield</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #06121f;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            padding: 18px 8%;
+            background: #081a2b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #12344d;
+        }
+
+        .logo {
+            color: #00e5ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #c9d8e5;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HEADER */
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .header h1 {
+            color: #00e5ff;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: #9fb3c8;
+            font-size: 17px;
+        }
+
+        /* TIPS CONTAINER */
+
+        .tips-container {
+            width: 85%;
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* TIP CARD */
+
+        .tip-card {
+            background: #0b1d2e;
+            border: 1px solid #153b55;
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5ff;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+        }
+
+        .tip-number {
+            color: #00e5ff;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tip-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .tip-card p {
+            color: #9fb3c8;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* REMINDER */
+
+        .security-reminder {
+            width: 85%;
+            max-width: 900px;
+            margin: 45px auto 20px;
+            padding: 30px;
+            text-align: center;
+            background: #0b1d2e;
+            border: 1px solid #00e5ff;
+            border-radius: 12px;
+        }
+
+        .security-reminder h2 {
+            color: #00e5ff;
+            margin-bottom: 12px;
+        }
+
+        .security-reminder p {
+            color: #c9d8e5;
+            line-height: 1.6;
+        }
+
+        /* COMPLETE BUTTON */
+
+        .complete-tips-btn {
+            display: block;
+            margin: 30px auto 60px;
+            padding: 14px 28px;
+            background: #00e5ff;
+            color: #06121f;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .complete-tips-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #081a2b;
+            color: #71879b;
+            font-size: 14px;
+            border-top: 1px solid #12344d;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            🛡️ Cyber Shield
+        </div>
+
+        <div>
+
+            <a href="index.html">Home</a>
+
+            <a href="password-checker.html">
+                Security Tools
+            </a>
+
+            <a href="tips.html">
+                Safety Tips
+            </a>
+
+            <a href="report.html">
+                Cyber Help
+            </a>
+
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HEADER -->
+
+    <section class="header">
+
+        <h1>🔐 Cybersecurity Safety Tips</h1>
+
+        <p>
+            Follow these simple steps to stay safe in the digital world.
+        </p>
+
+    </section>
+
+
+    <!-- TIPS -->
+
+    <section class="tips-container">
+
+
+        <!-- TIP 1 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 01
+            </div>
+
+            <h2>
+                🔑 Use Strong Passwords
+            </h2>
+
+            <p>
+                Create long and unique passwords using uppercase
+                letters, lowercase letters, numbers and special
+                characters. Avoid using your name or date of birth.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 2 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 02
+            </div>
+
+            <h2>
+                🔐 Enable Two-Factor Authentication
+            </h2>
+
+            <p>
+                Enable two-factor authentication whenever possible.
+                It provides an additional layer of security to your
+                online accounts.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 3 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 03
+            </div>
+
+            <h2>
+                📱 Never Share OTPs
+            </h2>
+
+            <p>
+                Never share OTPs, PINs, passwords or verification
+                codes with anyone, even if someone claims to be
+                from your bank or another trusted organization.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 4 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 04
+            </div>
+
+            <h2>
+                🎣 Watch Out for Phishing
+            </h2>
+
+            <p>
+                Be careful with suspicious emails, messages and
+                links. Attackers may try to trick you into revealing
+                your personal information.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 5 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 05
+            </div>
+
+            <h2>
+                🌐 Check Website URLs
+            </h2>
+
+            <p>
+                Before entering sensitive information, carefully
+                check the website address. Look for HTTPS and be
+                suspicious of unusual domains.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 6 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 06
+            </div>
+
+            <h2>
+                🔄 Keep Software Updated
+            </h2>
+
+            <p>
+                Keep your operating system, browser and applications
+                updated. Updates often contain important security
+                fixes.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 7 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 07
+            </div>
+
+            <h2>
+                📶 Be Careful on Public Wi-Fi
+            </h2>
+
+            <p>
+                Avoid performing sensitive activities such as
+                banking on unknown public Wi-Fi networks.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 8 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 08
+            </div>
+
+            <h2>
+                💾 Keep Backups
+            </h2>
+
+            <p>
+                Regularly back up important files and documents.
+                Backups can help protect your data from accidental
+                deletion or cyber attacks.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 9 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 09
+            </div>
+
+            <h2>
+                🔒 Lock Your Devices
+            </h2>
+
+            <p>
+                Always lock your laptop and smartphone when you are
+                away. Use a PIN, password, fingerprint or other
+                available security method.
+            </p>
+
+        </div>
+
+
+        <!-- TIP 10 -->
+
+        <div class="tip-card">
+
+            <div class="tip-number">
+                TIP 10
+            </div>
+
+            <h2>
+                🪪 Protect Personal Information
+            </h2>
+
+            <p>
+                Avoid sharing unnecessary personal information online.
+                Be careful about what you post on social media and
+                other public platforms.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- SECURITY REMINDER -->
+
+    <section class="security-reminder">
+
+        <h2>
+            ⚠️ Think Before You Click
+        </h2>
+
+        <p>
+            Cybersecurity starts with awareness.
+            Always think carefully before clicking links,
+            downloading files or sharing personal information.
+        </p>
+
+    </section>
+
+
+    <!-- COMPLETE BUTTON -->
+
+    <button
+        onclick="completeTips()"
+        class="complete-tips-btn">
+
+        ✅ I've Read All Safety Tips
+
+    </button>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        Developed by Mamta Pushpendra Gautam |
+        TY B.Sc. Computer Science
+
+        <br><br>
+
+        © 2026 Cyber Shield | Academic Project
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function completeTips() {
+
+            localStorage.setItem(
+                "tipsSecurityScore",
+                "20"
+            );
+
+            alert(
+                "🎉 Safety Tips completed!\n\n+20 Security Score"
+            );
+
+            window.location.href =
+                "dashboard.html";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

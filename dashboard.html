@@ -1,0 +1,1272 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Shield - Dashboard</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #06121f;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        header {
+            background: #071827;
+            border-bottom: 1px solid #21445d;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+
+        .logo {
+            color: #20d4f5;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .home-btn {
+            color: #20d4f5;
+            text-decoration: none;
+
+            border: 1px solid #20d4f5;
+
+            padding: 8px 18px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+
+        .home-btn:hover {
+            background: #20d4f5;
+            color: #06121f;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .container {
+            max-width: 1100px;
+
+            margin: 55px auto;
+
+            padding: 0 20px;
+        }
+
+
+        .welcome {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .welcome h1 {
+            font-size: 38px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .welcome p {
+            color: #a9d7e7;
+        }
+
+
+        /* ================= PROFILE ================= */
+
+        .profile {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .profile img {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 2px solid #20d4f5;
+        }
+
+
+        .default-profile {
+            width: 90px;
+            height: 90px;
+
+            border-radius: 50%;
+
+            border: 2px solid #20d4f5;
+
+            background: #071827;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            font-size: 40px;
+        }
+
+
+        .profile h2 {
+            color: #20d4f5;
+
+            margin-bottom: 4px;
+        }
+
+
+        .profile p {
+            color: #b9ddea;
+        }
+
+
+        /* ================= SCORE ================= */
+
+        .score-card {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .score-card h2 {
+            font-size: 25px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .score {
+            font-size: 55px;
+
+            font-weight: bold;
+
+            color: #20d4f5;
+
+            margin-bottom: 18px;
+        }
+
+
+        .progress {
+            width: 100%;
+
+            height: 18px;
+
+            background: #071827;
+
+            border: 1px solid #245774;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+
+        .progress-fill {
+            height: 100%;
+
+            width: 0%;
+
+            background: #20d4f5;
+
+            transition: 0.5s;
+        }
+
+
+        .status {
+            margin-top: 15px;
+
+            color: #20d4f5;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= SECTION TITLE ================= */
+
+        .section-title {
+            text-align: center;
+
+            margin: 35px 0 25px;
+        }
+
+
+        .section-title h2 {
+            font-size: 25px;
+        }
+
+
+        /* ================= BREAKDOWN ================= */
+
+        .breakdown {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+
+        .score-item {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            text-align: center;
+        }
+
+
+        .score-item h3 {
+            font-size: 16px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .points {
+            color: #20d4f5;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= TOOLS ================= */
+
+        .tools {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .tool-card {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            transition: 0.3s;
+        }
+
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+
+            border-color: #20d4f5;
+
+            box-shadow:
+                0 0 20px
+                rgba(32, 212, 245, 0.10);
+        }
+
+
+        .tool-card h3 {
+            color: #20d4f5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .tool-card p {
+            color: #b9ddea;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .tool-card a {
+            color: #20d4f5;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= HELP ================= */
+
+        .help {
+            margin-top: 30px;
+
+            padding: 30px;
+
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            text-align: center;
+        }
+
+
+        .help h2 {
+            color: #20d4f5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .help p {
+            color: #b9ddea;
+
+            margin-bottom: 20px;
+        }
+
+
+        .help a {
+            display: inline-block;
+
+            background: #20c5df;
+
+            color: #06121f;
+
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        /* ================= LOGOUT ================= */
+
+        .logout {
+            display: block;
+
+            margin: 35px auto;
+
+            padding: 13px 32px;
+
+            background: transparent;
+
+            color: #20d4f5;
+
+            border: 1px solid #20d4f5;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .logout:hover {
+            background: #20d4f5;
+
+            color: #06121f;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #04101b;
+
+            border-top: 1px solid #21445d;
+
+            text-align: center;
+
+            padding: 28px 20px;
+
+            color: #8eb8c9;
+
+            font-size: 13px;
+        }
+
+
+        footer strong {
+            color: #20d4f5;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            .breakdown,
+            .tools {
+                grid-template-columns: 1fr;
+            }
+
+
+            .profile {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .welcome h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- ================= LOGIN PROTECTION ================= -->
+
+    <script>
+
+        let loggedIn =
+            localStorage.getItem(
+                "cyberShieldLoggedIn"
+            );
+
+
+        if (loggedIn !== "true") {
+
+            window.location.href =
+                "login.html";
+
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🛡️ Cyber Shield Dashboard
+        </div>
+
+
+        <a href="index.html"
+           class="home-btn">
+
+            ← Home
+
+        </a>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="container">
+
+
+        <!-- WELCOME -->
+
+        <div class="welcome">
+
+            <h1>
+                Welcome Back! 👋
+            </h1>
+
+            <p>
+                Track your cybersecurity awareness progress.
+            </p>
+
+        </div>
+
+
+        <!-- ================= PROFILE ================= -->
+
+        <div class="profile">
+
+            <img id="dashboardPhoto"
+                 style="display: none;">
+
+
+            <div id="defaultProfile"
+                 class="default-profile">
+
+                👤
+
+            </div>
+
+
+            <div>
+
+                <h2 id="dashboardName">
+                    User
+                </h2>
+
+                <p id="dashboardEmail">
+                    user@email.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SCORE ================= -->
+
+        <div class="score-card">
+
+            <h2>
+                🛡️ Your Security Score
+            </h2>
+
+
+            <div class="score">
+
+                <span id="score">
+                    0
+                </span>/100
+
+            </div>
+
+
+            <div class="progress">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+                </div>
+
+            </div>
+
+
+            <div
+                class="status"
+                id="status">
+
+                Start completing security activities.
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= SCORE BREAKDOWN ================= -->
+
+        <div class="section-title">
+
+            <h2>
+                📊 Score Breakdown
+            </h2>
+
+        </div>
+
+
+        <div class="breakdown">
+
+
+            <div class="score-item">
+
+                <h3>
+                    🔑 Strong Password
+                </h3>
+
+                <div class="points">
+                    +25
+                </div>
+
+            </div>
+
+
+            <div class="score-item">
+
+                <h3>
+                    🌐 Safe URL
+                </h3>
+
+                <div class="points">
+                    +20
+                </div>
+
+            </div>
+
+
+            <div class="score-item">
+
+                <h3>
+                    🎣 Phishing Quiz
+                </h3>
+
+                <div class="points">
+                    +25
+                </div>
+
+            </div>
+
+
+            <div class="score-item">
+
+                <h3>
+                    🔒 Safety Tips
+                </h3>
+
+                <div class="points">
+                    +20
+                </div>
+
+            </div>
+
+
+            <div class="score-item">
+
+                <h3>
+                    🧠 Cybersecurity Quiz
+                </h3>
+
+                <div class="points">
+                    +10
+                </div>
+
+            </div>
+
+
+            <div class="score-item">
+
+                <h3>
+                    👤 Complete Profile
+                </h3>
+
+                <div class="points">
+                    +10
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================= SECURITY TOOLS ================= -->
+
+        <div class="section-title">
+
+            <h2>
+                🔐 Security Tools
+            </h2>
+
+        </div>
+
+
+        <div class="tools">
+
+
+            <!-- PASSWORD -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🔑 Password Checker
+                </h3>
+
+                <p>
+                    Check your password strength
+                    and improve your security.
+                </p>
+
+                <a href="password-checker.html">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+            <!-- URL -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🌐 URL Checker
+                </h3>
+
+                <p>
+                    Check URLs for basic suspicious
+                    signs before visiting them.
+                </p>
+
+                <a href="url-checker.html">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+            <!-- PHISHING -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🎣 Phishing Awareness
+                </h3>
+
+                <p>
+                    Learn how to identify phishing
+                    attempts and suspicious messages.
+                </p>
+
+                <a href="phishing.html">
+                    Open Tool →
+                </a>
+
+            </div>
+
+
+            <!-- SAFETY TIPS -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🔒 Safety Tips
+                </h3>
+
+                <p>
+                    Learn simple cybersecurity habits
+                    for safer online activity.
+                </p>
+
+                <a href="tips.html">
+                    Open Tips →
+                </a>
+
+            </div>
+
+
+            <!-- QUIZ -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🧠 Cybersecurity Quiz
+                </h3>
+
+                <p>
+                    Test your cybersecurity knowledge
+                    with an interactive quiz.
+                </p>
+
+                <a href="quiz.html">
+                    Take Quiz →
+                </a>
+
+            </div>
+
+
+            <!-- REPORT -->
+
+            <div class="tool-card">
+
+                <h3>
+                    🚨 Report Cybercrime
+                </h3>
+
+                <p>
+                    Learn where and how to get help
+                    for cybercrime.
+                </p>
+
+                <a href="report.html">
+                    Cyber Help →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================= CYBER HELP ================= -->
+
+        <div class="help">
+
+            <h2>
+                🚨 Need Cyber Help?
+            </h2>
+
+            <p>
+                Learn about cybercrime reporting
+                and important safety information.
+            </p>
+
+            <a href="report.html">
+                Get Cyber Help →
+            </a>
+
+        </div>
+
+
+        <!-- ================= LOGOUT ================= -->
+
+        <button
+            class="logout"
+            onclick="logout()">
+
+            🚪 Logout
+
+        </button>
+
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Developed by
+
+            <strong>
+                Mamta Pushpendra Gautam
+            </strong>
+        </p>
+
+        <p>
+            TY B.Sc. Computer Science
+        </p>
+
+        <p>
+            © 2026 Cyber Shield | Academic Project
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* ================= USER ================= */
+
+        let savedUser =
+            localStorage.getItem(
+                "cyberShieldUser"
+            );
+
+
+        if (savedUser !== null) {
+
+            let user =
+                JSON.parse(savedUser);
+
+
+            document.getElementById(
+                "dashboardName"
+            ).innerHTML =
+                user.name;
+
+
+            document.getElementById(
+                "dashboardEmail"
+            ).innerHTML =
+                user.email;
+
+
+            if (user.photo) {
+
+                let photo =
+                    document.getElementById(
+                        "dashboardPhoto"
+                    );
+
+
+                photo.src =
+                    user.photo;
+
+
+                photo.style.display =
+                    "block";
+
+
+                document.getElementById(
+                    "defaultProfile"
+                ).style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* ================= SCORE ================= */
+
+        let totalScore = 0;
+
+
+        let passwordScore =
+            localStorage.getItem(
+                "passwordSecurityScore"
+            );
+
+
+        let urlScore =
+            localStorage.getItem(
+                "urlSecurityScore"
+            );
+
+
+        let phishingScore =
+            localStorage.getItem(
+                "phishingSecurityScore"
+            );
+
+
+        let tipsScore =
+            localStorage.getItem(
+                "tipsSecurityScore"
+            );
+
+
+        let quizScore =
+            localStorage.getItem(
+                "quizScore"
+            );
+
+
+        /* PASSWORD */
+
+        if (passwordScore !== null) {
+
+            totalScore +=
+                Number(passwordScore);
+
+        }
+
+
+        /* URL */
+
+        if (urlScore !== null) {
+
+            totalScore +=
+                Number(urlScore);
+
+        }
+
+
+        /* PHISHING */
+
+        if (phishingScore !== null) {
+
+            totalScore +=
+                Number(phishingScore);
+
+        }
+
+
+        /* TIPS */
+
+        if (tipsScore !== null) {
+
+            totalScore +=
+                Number(tipsScore);
+
+        }
+
+
+        /* CYBERSECURITY QUIZ */
+
+        if (quizScore !== null) {
+
+            let quizPoints =
+                Number(quizScore) * 2;
+
+
+            totalScore +=
+                quizPoints;
+
+        }
+
+
+        /* PROFILE */
+
+        if (savedUser !== null) {
+
+            let user =
+                JSON.parse(savedUser);
+
+
+            if (
+                user.name !== "" &&
+                user.email !== ""
+            ) {
+
+                totalScore += 10;
+
+            }
+
+        }
+
+
+        /* MAXIMUM SCORE */
+
+        if (totalScore > 100) {
+
+            totalScore = 100;
+
+        }
+
+
+        /* DISPLAY SCORE */
+
+        document.getElementById(
+            "score"
+        ).innerHTML =
+            totalScore;
+
+
+        document.getElementById(
+            "progressFill"
+        ).style.width =
+            totalScore + "%";
+
+
+        /* STATUS */
+
+        let status =
+            document.getElementById(
+                "status"
+            );
+
+
+        if (totalScore === 100) {
+
+            status.innerHTML =
+                "🏆 EXCELLENT — Your Security Score is 100/100!";
+
+        }
+
+        else if (totalScore >= 80) {
+
+            status.innerHTML =
+                "🟢 VERY GOOD — Keep improving your security habits.";
+
+        }
+
+        else if (totalScore >= 50) {
+
+            status.innerHTML =
+                "🟡 GOOD — Complete more activities to improve your score.";
+
+        }
+
+        else {
+
+            status.innerHTML =
+                "🔴 NEEDS IMPROVEMENT — Complete security activities.";
+
+        }
+
+
+        /* ==================================================
+           SAVE SECURITY PROGRESS TO MONGODB
+        ================================================== */
+
+        async function saveProgressToBackend() {
+
+            let token =
+                localStorage.getItem(
+                    "cyberShieldToken"
+                );
+
+
+            if (!token) {
+
+                console.log(
+                    "No login token found."
+                );
+
+                return;
+            }
+
+
+            try {
+
+                let response =
+                    await fetch(
+                        "http://127.0.0.1:5000/api/auth/progress",
+                        {
+                            method: "PUT",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json",
+
+                                "Authorization":
+                                    "Bearer " + token
+                            },
+
+                            body: JSON.stringify({
+
+                                securityScore:
+                                    totalScore,
+
+                                quizScore:
+                                    Number(
+                                        quizScore || 0
+                                    ),
+
+                                phishingCompleted:
+                                    phishingScore !== null,
+
+                                tipsCompleted:
+                                    tipsScore !== null,
+
+                                strongPasswordCompleted:
+                                    passwordScore !== null,
+
+                                safeUrlCompleted:
+                                    urlScore !== null
+
+                            })
+                        }
+                    );
+
+
+                let data =
+                    await response.json();
+
+
+                if (response.ok) {
+
+                    console.log(
+                        "✅ Security progress saved to MongoDB"
+                    );
+
+                }
+
+                else {
+
+                    console.log(
+                        "❌ Progress save failed:",
+                        data.message
+                    );
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "❌ Cannot connect to backend:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        /* SAVE SCORE */
+
+        saveProgressToBackend();
+
+
+        /* ================= LOGOUT ================= */
+
+        function logout() {
+
+            localStorage.removeItem(
+                "cyberShieldLoggedIn"
+            );
+
+
+            localStorage.removeItem(
+                "cyberShieldToken"
+            );
+
+
+            window.location.href =
+                "login.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

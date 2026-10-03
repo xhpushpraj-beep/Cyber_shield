@@ -1,0 +1,133 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+ <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>URL Safety Checker - Cyber Shield</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ Cyber Shield
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="password-checker.html">
+                Password Checker
+            </a>
+
+            <a href="url-checker.html">
+                URL Checker
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- URL Checker -->
+
+    <section class="password-page">
+
+        <div class="password-box">
+
+            <h1>🌐 URL Safety Checker</h1>
+
+            <p>
+                Check whether a website URL looks safe or suspicious.
+            </p>
+
+
+            <input
+                type="text"
+                id="url"
+                placeholder="Enter website URL"
+            >
+
+
+            <button
+                class="check-btn"
+                onclick="checkURL()">
+
+                Check URL
+
+            </button>
+
+
+            <div
+                id="url-result"
+                class="password-result">
+
+                Enter a URL to check.
+
+            </div>
+
+
+            <!-- Security Checks -->
+
+            <div class="url-checks">
+
+                <h2>Security Checks</h2>
+
+                <p id="https">
+                    ❌ Uses HTTPS
+                </p>
+
+                <p id="format">
+                    ❌ Valid URL format
+                </p>
+
+                <p id="suspicious">
+                    ❌ No suspicious keywords
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            Developed by Mamta Pushpendra Gautam
+        </p>
+
+        <p>
+            TY B.Sc. Computer Science
+        </p>
+
+        <p>
+            © 2026 Cyber Shield | Academic Project
+        </p>
+
+    </footer>
+
+
+    <script src="js/url-checker.js"></script>
+
+</body>
+
+</html>

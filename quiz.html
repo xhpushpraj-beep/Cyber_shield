@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Shield - Cybersecurity Quiz</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #06121f;
+            color: white;
+        }
+
+        nav {
+            background: #071827;
+            border-bottom: 1px solid #21445d;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #20d4f5;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: #20d4f5;
+            text-decoration: none;
+
+            border: 1px solid #20d4f5;
+
+            padding: 9px 18px;
+
+            border-radius: 7px;
+        }
+
+        .back-btn:hover {
+            background: #20d4f5;
+            color: #06121f;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 70px auto;
+
+            padding: 0 20px;
+        }
+
+        .quiz-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .quiz-title h1 {
+            font-size: 38px;
+            color: #20d4f5;
+            margin-bottom: 10px;
+        }
+
+        .quiz-title p {
+            color: #a9d7e7;
+        }
+
+        .question-card {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+        }
+
+        .question-card h2 {
+            font-size: 20px;
+            margin-bottom: 22px;
+        }
+
+        .option {
+            display: block;
+
+            background: #071827;
+
+            border: 1px solid #245774;
+
+            color: white;
+
+            padding: 14px;
+
+            margin: 10px 0;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .option:hover {
+            border-color: #20d4f5;
+            background: #0d2b42;
+        }
+
+        .option input {
+            margin-right: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+
+            margin: 30px auto;
+
+            padding: 14px 30px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #20c5df;
+
+            color: #06121f;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 0 20px
+                rgba(32, 197, 223, 0.4);
+        }
+
+        #quiz-result {
+            text-align: center;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin-top: 25px;
+
+            color: #20d4f5;
+        }
+
+        .retry-btn {
+            display: none;
+
+            margin: 20px auto;
+
+            padding: 12px 25px;
+
+            border: 1px solid #20d4f5;
+
+            border-radius: 8px;
+
+            background: transparent;
+
+            color: #20d4f5;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .retry-btn:hover {
+            background: #20d4f5;
+            color: #06121f;
+        }
+
+        footer {
+            margin-top: 80px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background: #04101b;
+
+            color: #8eb8c9;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #20d4f5;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <a href="index.html"
+           class="logo">
+
+            🛡️ Cyber Shield
+
+        </a>
+
+        <a href="index.html"
+           class="back-btn">
+
+            ← Home
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- QUIZ -->
+
+    <div class="quiz-container">
+
+
+        <div class="quiz-title">
+
+            <h1>
+                🧠 Cybersecurity Quiz
+            </h1>
+
+            <p>
+                Test your cybersecurity knowledge.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question-card">
+
+            <h2>
+                1. What should you do if someone asks for your OTP?
+            </h2>
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q1"
+                       value="wrong">
+
+                Share it with them
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q1"
+                       value="correct">
+
+                Never share it
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q1"
+                       value="wrong">
+
+                Post it online
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q1"
+                       value="wrong">
+
+                Send it by email
+
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question-card">
+
+            <h2>
+                2. Which password is generally stronger?
+            </h2>
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q2"
+                       value="wrong">
+
+                123456
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q2"
+                       value="wrong">
+
+                password
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q2"
+                       value="correct">
+
+                M@ngo#2026!Safe
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q2"
+                       value="wrong">
+
+                111111
+
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question-card">
+
+            <h2>
+                3. What is phishing?
+            </h2>
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q3"
+                       value="wrong">
+
+                A computer game
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q3"
+                       value="correct">
+
+                An attempt to trick users into giving sensitive information
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q3"
+                       value="wrong">
+
+                A type of antivirus
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q3"
+                       value="wrong">
+
+                A Wi-Fi connection
+
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question-card">
+
+            <h2>
+                4. What does HTTPS indicate?
+            </h2>
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q4"
+                       value="wrong">
+
+                The website is always safe
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q4"
+                       value="correct">
+
+                The connection uses encryption
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q4"
+                       value="wrong">
+
+                The website cannot be hacked
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q4"
+                       value="wrong">
+
+                The website is government owned
+
+            </label>
+
+        </div>
+
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question-card">
+
+            <h2>
+                5. What should you do with suspicious links?
+            </h2>
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q5"
+                       value="wrong">
+
+                Click immediately
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q5"
+                       value="correct">
+
+                Verify the link before opening it
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q5"
+                       value="wrong">
+
+                Share it with friends
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="q5"
+                       value="wrong">
+
+                Enter your password
+
+            </label>
+
+        </div>
+
+
+
+        <button class="submit-btn"
+                onclick="submitQuiz()">
+
+            Submit Quiz
+
+        </button>
+
+
+        <div id="quiz-result"></div>
+
+
+        <button class="retry-btn"
+                id="retryBtn"
+                onclick="location.reload()">
+
+            🔄 Retry Quiz
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            Developed by
+
+            <strong>
+                Mamta Pushpendra Gautam
+            </strong>
+
+        </p>
+
+        <p>
+            TY B.Sc. Computer Science
+        </p>
+
+        <p>
+            © 2026 Cyber Shield | Academic Project
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function submitQuiz() {
+
+            let score = 0;
+
+
+            let questions = [
+                "q1",
+                "q2",
+                "q3",
+                "q4",
+                "q5"
+            ];
+
+
+            for (let question of questions) {
+
+                let answer =
+                    document.querySelector(
+                        'input[name="' +
+                        question +
+                        '"]:checked'
+                    );
+
+
+                if (answer === null) {
+
+                    alert(
+                        "⚠️ Please answer all questions."
+                    );
+
+                    return;
+                }
+
+
+                if (answer.value === "correct") {
+
+                    score++;
+
+                }
+
+            }
+
+
+            let result =
+                document.getElementById(
+                    "quiz-result"
+                );
+
+
+            result.innerHTML =
+                "🎉 Your Score: " +
+                score +
+                " / 5";
+
+
+            localStorage.setItem(
+                "quizScore",
+                score
+            );
+
+
+            document.getElementById(
+                "retryBtn"
+            ).style.display = "block";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

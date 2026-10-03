@@ -1,0 +1,934 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Shield - Cybersecurity Awareness</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #06121f;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #071827;
+            border-bottom: 1px solid #21445d;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #20d4f5;
+            text-decoration: none;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #d8f7ff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #20d4f5;
+        }
+
+        .login-btn {
+            border: 1px solid #20d4f5;
+            padding: 9px 18px;
+            border-radius: 7px;
+            color: #20d4f5 !important;
+        }
+
+        .login-btn:hover {
+            background: #20d4f5;
+            color: #06121f !important;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #20d4f5;
+        }
+
+        .hero p {
+            color: #b8dff0;
+            font-size: 17px;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 24px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #20c5df;
+            color: #06121f;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(32, 197, 223, 0.35);
+        }
+
+        .secondary-btn {
+            border: 1px solid #20c5df;
+            color: #20c5df;
+        }
+
+        .secondary-btn:hover {
+            background: #20c5df;
+            color: #06121f;
+        }
+
+        /* ================= COMMON ================= */
+
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #9ed7eb;
+            font-size: 14px;
+        }
+
+        /* ================= TOOLS ================= */
+
+        #tools,
+        #about,
+        #tips,
+        #contact {
+            scroll-margin-top: 80px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tool-card {
+            background: #0b2033;
+            border: 1px solid #245774;
+            border-radius: 14px;
+            padding: 30px 25px;
+            min-height: 275px;
+            transition: 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: #20d4f5;
+            box-shadow: 0 0 25px rgba(32, 212, 245, 0.12);
+        }
+
+        .tool-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .tool-card h3 {
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .tool-card p {
+            color: #b9ddea;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .tool-card a {
+            color: #20d4f5;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .tool-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #071827;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #b9ddea;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        /* ================= TIPS ================= */
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .tip-card {
+            background: #0b2033;
+            border: 1px solid #245774;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .tip-card h3 {
+            color: #20d4f5;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .tip-card p {
+            color: #b9ddea;
+            font-size: 14px;
+        }
+
+        .view-tips {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .view-tips a {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid #20d4f5;
+            border-radius: 7px;
+            color: #20d4f5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .view-tips a:hover {
+            background: #20d4f5;
+            color: #06121f;
+        }
+
+        /* ================= DEVELOPER ================= */
+
+        .developer {
+            background: #071827;
+        }
+
+        .developer-card {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: #0b2033;
+            border: 1px solid #245774;
+            border-radius: 14px;
+            padding: 40px 25px;
+        }
+
+        .developer-card h2 {
+            color: #20d4f5;
+            margin-bottom: 10px;
+        }
+
+        .developer-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .developer-card p {
+            color: #b9ddea;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            color: #b9ddea;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #20c5df;
+            color: #06121f;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #04101b;
+            border-top: 1px solid #21445d;
+            text-align: center;
+            padding: 30px 20px;
+            color: #8eb8c9;
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #20d4f5;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                height: auto;
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .tools-grid,
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: 220px;
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <a href="./index.html"
+           class="logo">
+
+            🛡️ Cyber Shield
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="#tools">
+                Security Tools
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#tips">
+                Safety Tips
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="login.html"
+               class="login-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Stay Safe in the
+
+                <span>
+                    Digital World
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Learn cybersecurity, identify online threats,
+                check suspicious URLs, understand phishing
+                and build safer digital habits.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#tools"
+                   class="primary-btn">
+
+                    Explore Security Tools
+
+                </a>
+
+
+                <a href="register.html"
+                   class="secondary-btn">
+
+                    Create Account
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SECURITY TOOLS ================= -->
+
+    <section id="tools">
+
+        <div class="section-title">
+
+            <h2>
+                🔐 Security Tools
+            </h2>
+
+            <p>
+                Simple tools to help you understand
+                common cybersecurity risks.
+            </p>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+
+            <!-- PASSWORD -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🔑
+                </div>
+
+                <h3>
+                    Password Strength Checker
+                </h3>
+
+                <p>
+                    Check whether your password is
+                    Weak, Medium or Strong.
+                </p>
+
+                <a href="password-checker.html">
+                    Check Password →
+                </a>
+
+            </div>
+
+
+
+            <!-- URL -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    URL Safety Checker
+                </h3>
+
+                <p>
+                    Analyze a website address for
+                    basic suspicious signs.
+                </p>
+
+                <a href="url-checker.html">
+                    Check URL →
+                </a>
+
+            </div>
+
+
+
+            <!-- PHISHING -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🎣
+                </div>
+
+                <h3>
+                    Phishing Awareness
+                </h3>
+
+                <p>
+                    Learn how to identify phishing
+                    messages and suspicious requests.
+                </p>
+
+                <a href="phishing.html">
+                    Learn Phishing →
+                </a>
+
+            </div>
+
+
+
+            <!-- QUIZ -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Cybersecurity Quiz
+                </h3>
+
+                <p>
+                    Test your cybersecurity knowledge
+                    with an interactive quiz.
+                </p>
+
+                <a href="quiz.html">
+                    Take Quiz →
+                </a>
+
+            </div>
+
+
+
+            <!-- SAFETY TIPS -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🔒
+                </div>
+
+                <h3>
+                    Cybersecurity Safety Tips
+                </h3>
+
+                <p>
+                    Learn simple habits that can
+                    help keep you safer online.
+                </p>
+
+                <a href="tips.html">
+                    View Tips →
+                </a>
+
+            </div>
+
+
+
+            <!-- REPORT -->
+
+            <div class="tool-card">
+
+                <div class="tool-icon">
+                    🚨
+                </div>
+
+                <h3>
+                    Report Cybercrime
+                </h3>
+
+                <p>
+                    Learn what to do if you experience
+                    a cybercrime and where to get help.
+                </p>
+
+                <a href="report.html">
+                    Get Cyber Help →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about"
+             class="about">
+
+        <div class="section-title">
+
+            <h2>
+                🛡️ About Cyber Shield
+            </h2>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p>
+                Cyber Shield is a cybersecurity awareness
+                and threat detection website designed to
+                help users understand common online risks.
+            </p>
+
+            <p>
+                The website provides simple educational
+                tools for password security, URL safety,
+                phishing awareness, cybersecurity quizzes
+                and safe online habits.
+            </p>
+
+            <p>
+                This project is developed as an academic
+                project to promote cybersecurity awareness
+                among students and internet users.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= SAFETY TIPS ================= -->
+
+    <section id="tips">
+
+        <div class="section-title">
+
+            <h2>
+                🔒 Cybersecurity Safety Tips
+            </h2>
+
+            <p>
+                Follow these basic habits to stay safer online.
+            </p>
+
+        </div>
+
+
+        <div class="tips-grid">
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🔑 Use Strong Passwords
+                </h3>
+
+                <p>
+                    Use long and unique passwords
+                    for your important accounts.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🔐 Enable 2FA
+                </h3>
+
+                <p>
+                    Enable two-factor authentication
+                    whenever it is available.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🚫 Never Share OTP
+                </h3>
+
+                <p>
+                    Never share OTPs, PINs or
+                    passwords with anyone.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🎣 Watch for Phishing
+                </h3>
+
+                <p>
+                    Be careful with unexpected
+                    emails, messages and links.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🌐 Check URLs
+                </h3>
+
+                <p>
+                    Carefully check website addresses
+                    before entering personal information.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <h3>
+                    🔄 Update Software
+                </h3>
+
+                <p>
+                    Keep your operating system and
+                    applications updated.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="view-tips">
+
+            <a href="tips.html">
+                View All Safety Tips →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DEVELOPER ================= -->
+
+    <section class="developer">
+
+        <div class="section-title">
+
+            <h2>
+                👩‍💻 Project Developer
+            </h2>
+
+        </div>
+
+
+        <div class="developer-card">
+
+            <h2>
+                Mamta Pushpendra Gautam
+            </h2>
+
+            <h3>
+                TY B.Sc. Computer Science Student
+            </h3>
+
+            <p>
+                Cyber Shield is developed as an academic
+                cybersecurity awareness project. The project
+                demonstrates web development, cybersecurity
+                concepts and interactive security tools.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>
+                📞 Cyber Help
+            </h2>
+
+        </div>
+
+
+        <div class="contact-content">
+
+            <p>
+                If you are a victim of cybercrime,
+                use the cybercrime reporting page
+                to learn about available help.
+            </p>
+
+
+            <a href="report.html"
+               class="contact-btn">
+
+                Report Cybercrime
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Developed by
+            <strong>
+                Mamta Pushpendra Gautam
+            </strong>
+        </p>
+
+        <p>
+            TY B.Sc. Computer Science
+        </p>
+
+        <p>
+            © 2026 Cyber Shield | Academic Project
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

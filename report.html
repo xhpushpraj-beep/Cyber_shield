@@ -1,0 +1,808 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cyber Shield - Report Cybercrime</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #06121f;
+            color: white;
+            line-height: 1.6;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            background: #071827;
+
+            border-bottom: 1px solid #21445d;
+
+            padding: 18px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .logo {
+            color: #20d4f5;
+
+            text-decoration: none;
+
+            font-size: 23px;
+
+            font-weight: bold;
+        }
+
+
+        .home-btn {
+            color: #20d4f5;
+
+            text-decoration: none;
+
+            border: 1px solid #20d4f5;
+
+            padding: 9px 18px;
+
+            border-radius: 7px;
+        }
+
+
+        .home-btn:hover {
+            background: #20d4f5;
+
+            color: #06121f;
+        }
+
+
+        /* ================= MAIN ================= */
+
+        .container {
+            max-width: 850px;
+
+            margin: 60px auto;
+
+            padding: 0 20px;
+        }
+
+
+        .page-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .page-title h1 {
+            font-size: 40px;
+
+            color: #20d4f5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .page-title p {
+            color: #a9d7e7;
+        }
+
+
+        /* ================= WARNING ================= */
+
+        .warning-card {
+            background: #10283a;
+
+            border: 1px solid #20d4f5;
+
+            border-radius: 12px;
+
+            padding: 22px;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+        }
+
+
+        .warning-card h2 {
+            color: #20d4f5;
+
+            margin-bottom: 8px;
+        }
+
+
+        .warning-card p {
+            color: #b9ddea;
+        }
+
+
+        /* ================= REPORT FORM ================= */
+
+        .report-card {
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 30px;
+        }
+
+
+        .report-card h2 {
+            color: #20d4f5;
+
+            margin-bottom: 25px;
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 13px;
+
+            background: #071827;
+
+            border: 1px solid #245774;
+
+            border-radius: 7px;
+
+            color: white;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #20d4f5;
+        }
+
+
+        .form-group textarea {
+
+            min-height: 130px;
+
+            resize: vertical;
+        }
+
+
+        .form-group select option {
+
+            background: #071827;
+
+            color: white;
+        }
+
+
+        .submit-btn {
+
+            width: 100%;
+
+            padding: 14px;
+
+            background: #20c5df;
+
+            color: #06121f;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        .submit-btn:hover {
+
+            box-shadow:
+                0 0 20px
+                rgba(32, 197, 223, 0.35);
+
+            transform: translateY(-2px);
+        }
+
+
+        #reportResult {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #20d4f5;
+
+            font-weight: bold;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= OFFICIAL HELP ================= */
+
+        .help-card {
+
+            margin-top: 30px;
+
+            background: #0b2033;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+
+        .help-card h2 {
+
+            color: #20d4f5;
+
+            margin-bottom: 10px;
+        }
+
+
+        .help-card p {
+
+            color: #b9ddea;
+
+            margin-bottom: 15px;
+        }
+
+
+        .helpline {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            color: #20d4f5;
+
+            margin-bottom: 20px;
+        }
+
+
+        .official-btn {
+
+            display: inline-block;
+
+            background: #20c5df;
+
+            color: #06121f;
+
+            padding: 12px 22px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+
+        .official-btn:hover {
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= EVIDENCE ================= */
+
+        .evidence-card {
+
+            margin-top: 30px;
+
+            background: #071827;
+
+            border: 1px solid #245774;
+
+            border-radius: 14px;
+
+            padding: 30px;
+        }
+
+
+        .evidence-card h2 {
+
+            color: #20d4f5;
+
+            margin-bottom: 15px;
+        }
+
+
+        .evidence-card ul {
+
+            padding-left: 22px;
+
+            color: #b9ddea;
+        }
+
+
+        .evidence-card li {
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            margin-top: 70px;
+
+            background: #04101b;
+
+            border-top: 1px solid #21445d;
+
+            text-align: center;
+
+            padding: 28px 20px;
+
+            color: #8eb8c9;
+
+            font-size: 13px;
+        }
+
+
+        footer strong {
+
+            color: #20d4f5;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            .page-title h1 {
+
+                font-size: 32px;
+            }
+
+
+            .report-card,
+            .help-card,
+            .evidence-card {
+
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <a href="index.html"
+           class="logo">
+
+            🛡️ Cyber Shield
+
+        </a>
+
+
+        <a href="index.html"
+           class="home-btn">
+
+            ← Home
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <div class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <h1>
+                🚨 Report Cybercrime
+            </h1>
+
+            <p>
+                Get help and learn how to report a cybercrime.
+            </p>
+
+        </div>
+
+
+
+        <!-- WARNING -->
+
+        <div class="warning-card">
+
+            <h2>
+                ⚠️ Important
+            </h2>
+
+            <p>
+                If you have experienced cybercrime,
+                keep all evidence and report the incident
+                through the appropriate official channel.
+            </p>
+
+        </div>
+
+
+
+        <!-- REPORT FORM -->
+
+        <div class="report-card">
+
+            <h2>
+                📝 Cybercrime Information
+            </h2>
+
+
+            <form id="reportForm">
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="reportName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reportName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="reportEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="reportEmail"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+
+
+                <!-- TYPE -->
+
+                <div class="form-group">
+
+                    <label for="crimeType">
+                        Type of Cybercrime
+                    </label>
+
+
+                    <select
+                        id="crimeType"
+                        required>
+
+                        <option value="">
+                            Select cybercrime type
+                        </option>
+
+                        <option value="Phishing">
+                            Phishing
+                        </option>
+
+                        <option value="Online Financial Fraud">
+                            Online Financial Fraud
+                        </option>
+
+                        <option value="Account Hacking">
+                            Account Hacking
+                        </option>
+
+                        <option value="Identity Theft">
+                            Identity Theft
+                        </option>
+
+                        <option value="Cyberbullying">
+                            Cyberbullying
+                        </option>
+
+                        <option value="Fake Website">
+                            Fake Website
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label for="incidentDate">
+                        Date of Incident
+                    </label>
+
+                    <input
+                        type="date"
+                        id="incidentDate"
+                        required>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe the Incident
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Describe what happened..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    🚨 Submit Report
+
+                </button>
+
+
+            </form>
+
+
+            <div id="reportResult"></div>
+
+
+        </div>
+
+
+
+        <!-- ================= OFFICIAL HELP ================= -->
+
+        <div class="help-card">
+
+
+            <h2>
+                🇮🇳 Official Cybercrime Help
+            </h2>
+
+
+            <p>
+                For cybercrime complaints in India,
+                use the official National Cyber Crime
+                Reporting Portal.
+            </p>
+
+
+            <div class="helpline">
+
+                📞 1930
+
+            </div>
+
+
+            <a
+                href="https://www.cybercrime.gov.in/"
+                target="_blank"
+                class="official-btn">
+
+                Visit Official Portal →
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- ================= EVIDENCE ================= -->
+
+        <div class="evidence-card">
+
+
+            <h2>
+                📂 Keep Your Evidence Ready
+            </h2>
+
+
+            <ul>
+
+                <li>
+                    Screenshots of suspicious messages
+                </li>
+
+                <li>
+                    Suspicious website URLs
+                </li>
+
+                <li>
+                    Phone numbers or email addresses
+                </li>
+
+                <li>
+                    Chat conversations
+                </li>
+
+                <li>
+                    Transaction details
+                </li>
+
+                <li>
+                    Any other relevant documents
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            Developed by
+
+            <strong>
+                Mamta Pushpendra Gautam
+            </strong>
+
+        </p>
+
+
+        <p>
+            TY B.Sc. Computer Science
+        </p>
+
+
+        <p>
+            © 2026 Cyber Shield | Academic Project
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        let reportForm =
+            document.getElementById(
+                "reportForm"
+            );
+
+
+        reportForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                let name =
+                    document.getElementById(
+                        "reportName"
+                    ).value.trim();
+
+
+                let result =
+                    document.getElementById(
+                        "reportResult"
+                    );
+
+
+                result.innerHTML =
+                    "✅ Report information submitted successfully, " +
+                    name +
+                    "!";
+
+
+                reportForm.reset();
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
